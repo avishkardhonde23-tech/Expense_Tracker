@@ -19,6 +19,25 @@
 
 <br><br>
 
+<h2>Your Expenses</h2>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Category</th>
+    </tr>
+
+    ```
+    <tr th:each="exp : ${expenses}">
+        <td th:text="${exp.title}"></td>
+        <td th:text="${exp.amount}"></td>
+        <td th:text="${exp.category}"></td>
+    </tr>
+    ```
+
+</table>
+
 <!-- Logout -->
 <form action="/logout" method="post">
     <button type="submit">Logout</button>

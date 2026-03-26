@@ -8,8 +8,11 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class ExpenseController {
@@ -21,6 +24,18 @@ public class ExpenseController {
     public String dashboard(){
         return "dashboard";
     }
+    @GetMapping("/dashboard")
+    public String dashboard(Model model, HttpSession session) {
+
+        User user = (User) session.getAttribute("user");
+
+        List<Expense> expenses = expenseService.getAllExpenses(user);
+
+        model.addAttribute("expenses", expenses);
+
+        return "dashboard";
+    }
+
     @PostMapping("/addexpense")
     public String addExpense(Expense expense, Authentication authentication){
         String username = authentication.getName();
@@ -31,5 +46,4 @@ public class ExpenseController {
 
     }
 }
-
 

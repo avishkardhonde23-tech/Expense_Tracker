@@ -17,12 +17,16 @@ public class ExpenseService {
         return expenseRepository.save(expense);
     }
 
+    public List<Expense> getAllExpenses(User user) {
+    return expenseRepository.findByUser(user);
+     }
     public List<Expense> getUserExpenses(User user){
 
         return expenseRepository.findByUser(user);
 
     }
 }
+
 
 
 
