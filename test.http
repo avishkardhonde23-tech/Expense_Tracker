@@ -1,0 +1,23 @@
+# @no-cookie-jar
+POST http://localhost:8080/register
+
+username=avi&password=1234&email=avi@gmail.com&fullName=Avishkar
+
+###
+# @no-cookie-jar
+POST http://localhost:8080/login
+
+username=avi&password=1234
+
+###
+# @no-cookie-jar
+GET http://localhost:8080/dashboard
+
+###
+# @no-cookie-jar
+POST http://localhost:8080/addexpense
+Content-Type: application/x-www-form-urlencoded
+
+title=Food&amount=200&category=Lunch
+
+###

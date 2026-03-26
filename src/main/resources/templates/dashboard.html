@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Welcome to Dashboard</h2>
+
+<!-- Add Expense Form -->
+<h3>Add Expense</h3>
+
+<form action="/addexpense" method="post">
+    Title: <input type="text" name="title"><br><br>
+    Amount: <input type="number" name="amount"><br><br>
+    Category: <input type="text" name="category"><br><br>
+    <button type="submit">Add Expense</button>
+</form>
+
+<br><br>
+
+<!-- Logout -->
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+</body>
+</html>
